@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование заметки</title>
+{#    <text>Edit: {{ post.content }}</text>#}
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label>
+                Заголовок
+                <input name="title">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Содержимое
+                <textarea name="text"></textarea>
+            </label>
+        </div>
+
+        <div>
+        <!--input type="submit" value="Отправить">-->
+            <a href="/post/{{ post.id }}/edit_post">Edit</a>
+        </div>
+
+    </form>
+
+
+</body>
+</html>
